@@ -19,7 +19,7 @@ mongoose.set("strictQuery", false);
 
 main().catch((err) => console.log(err));
 async function main() {
-  await mongoose.connect(process.env.SECRET_KEY);
+  await mongoose.connect(process.env.KEY);
 }
 
 // view engine setup
