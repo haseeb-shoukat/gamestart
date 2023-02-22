@@ -9,7 +9,7 @@ var indexRouter = require("./routes/index");
 var consolesRouter = require("./routes/consoles");
 var genresRouter = require("./routes/genres");
 var gamesRouter = require("./routes/games");
-var accessoriesRouter = require("./routes/users");
+var accessoriesRouter = require("./routes/accessories");
 
 var app = express();
 
