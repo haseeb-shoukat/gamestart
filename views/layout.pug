@@ -1,7 +1,32 @@
 doctype html
-html
+html(lang="en")
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="/stylesheets/layout.css")
+    link(rel="icon" type="image/x-icon" href="/images/favicon.ico")
   body
-    block content
+    header
+      a(href="/")
+        div.logo Game
+          span(class="yellow") Start
+      nav.nav-items 
+        a.nav-item(href="/consoles") Consoles
+        a.nav-item(href="/genres") Genres
+        a.nav-item(href="/games") Games
+        a.nav-item(href="/accessories") Accessories
+    div#content
+      block content
+
+    footer 
+      div.mission
+        div.logo-small Game
+          span(class="yellow") Start
+        div.mission-statement 
+          | Our mission is to become the number one supplier of games, consoles and other related products. The only thing currently stopping us is the fact that we are a completely fake brand. To elaborate further on the point, we plan on becoming the biggest in the world. The biggest out of all. Yes, big!
+      div.footer-links-icons
+        div.footer-links
+          a.nav-item(href="/consoles") Consoles
+          a.nav-item(href="/genres") Genres
+          a.nav-item(href="/games") Games
+          a.nav-item(href="/accessories") Accessories
+        div.footer-icons
