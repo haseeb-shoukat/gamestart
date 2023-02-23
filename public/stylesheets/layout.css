@@ -44,10 +44,14 @@ a {
     display: flex;
     align-items: center;
     font-size: 1rem;
+    justify-content: space-evenly;
+}
+
+.nav-items {
+    width: 50%;
 }
 
 .nav-item {
-    margin-left: 60px;
     color: #FFFFFF;
 }
 
@@ -70,8 +74,10 @@ a {
     flex-basis: 50%;
 }
 
-.footer-links {
-    justify-content: space-between;
+.footer-icons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0px;
 }
 
 .mission-statement {
