@@ -1,6 +1,6 @@
 .carousel {
     width: 100%;
-    height: 520px;
+    height: 600px;
     position: relative;
     overflow: hidden;
 }
@@ -56,4 +56,55 @@
 .slide-in {
     transition: transform 1s;
     transform: translateX(0%);
+}
+
+.section-heading {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #FF9F1C;
+    border-top: 5px solid #FF9F1C;
+    border-bottom: 5px solid #FF9F1C;
+    padding: 10px 0px;
+}
+
+.section-content {
+    background-color: #CCADAD;
+    height: 280px;
+}
+
+.banner-section {
+    height: 450px;
+    display: flex;
+}
+
+.banner-image-box {
+    flex-basis: 50%;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    background-color: #2ec4b5b3;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 8%;
+}
+
+.banner-content-h {
+    color: #E71D36;
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+.banner-content-t {
+    color: #FFFFFF;
+    font-size: 1.4rem;
 }
