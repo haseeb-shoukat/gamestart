@@ -1,5 +1,16 @@
 extends layout
 
+block link-docs 
+  link(rel="stylesheet" href="/stylesheets/index.css")
+  script(src="/javascripts/index.js" defer)
+
 block content
-  h1= title
-  p Welcome to #{title}
+  div.carousel
+    svg.carousel-icon.left-icon(xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24")
+      path(fill="#FFFFFF" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6l6 6l1.41-1.41z")
+    img.carousel-banner.previous-banner(src="/images/banners/uncharted-4-banner.jpeg", alt="Uncharted 4 Banner")
+    img.carousel-banner.current-banner(src="/images/banners/hogwarts-legacy-banner.jpeg", alt="Hogwarts Legacy Banner")
+    img.carousel-banner.next-banner(src="/images/banners/mw-2-banner.jpeg", alt="COD MW 2 Banner")
+    svg.carousel-icon.right-icon(xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24")
+      path(fill="#FFFFFF" d="M9.4 18L8 16.6l4.6-4.6L8 7.4L9.4 6l6 6l-6 6Z")
+    
