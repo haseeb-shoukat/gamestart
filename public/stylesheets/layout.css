@@ -108,3 +108,9 @@ a {
 .bottom-text a:hover {
     color: #5DADEC;
 }
+
+#content {
+    display: flex;
+    flex-direction: column;
+    
+}
