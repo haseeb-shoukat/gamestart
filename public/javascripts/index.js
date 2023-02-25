@@ -1,10 +1,10 @@
 const previousBtn = document.querySelector(".left-icon");
 const nextBtn = document.querySelector(".right-icon");
 const images = [
-  "hogwarts-legacy-banner",
-  "mw-2-banner",
-  "spider-man-banner",
-  "uncharted-4-banner",
+  { src: "spider-man-banner", alt: "Spider-Man Banner" },
+  { src: "hogwarts-legacy-banner", alt: "Hogwarts Legacy Banner" },
+  { src: "mw-2-banner", alt: "COD MW 2 Banner" },
+  { src: "uncharted-4-banner", alt: "Uncharted 4 Banner" },
 ];
 
 let state = [3, 0, 1];
@@ -53,14 +53,17 @@ const assignSources = async function () {
   flag = true;
   removeClasses();
   document.querySelector(".previous-banner").src = `/images/banners/${
-    images[state[0]]
+    images[state[0]].src
   }.jpeg`;
+  document.querySelector(".previous-banner").alt = images[state[0]].alt;
   document.querySelector(".current-banner").src = `/images/banners/${
-    images[state[1]]
+    images[state[1]].src
   }.jpeg`;
+  document.querySelector(".current-banner").alt = images[state[1]].alt;
   document.querySelector(".next-banner").src = `/images/banners/${
-    images[state[2]]
+    images[state[2]].src
   }.jpeg`;
+  document.querySelector(".next-banner").alt = images[state[2]].alt;
 };
 
 const removeClasses = function () {
