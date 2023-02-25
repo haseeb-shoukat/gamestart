@@ -108,3 +108,21 @@
     color: #FFFFFF;
     font-size: 1.4rem;
 }
+
+.icons-batch {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 26px 0px;
+}
+
+.icon-package {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.icon-package-t {
+    text-align: center;
+}
