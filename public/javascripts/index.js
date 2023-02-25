@@ -7,24 +7,34 @@ const images = [
   { src: "uncharted-4-banner", alt: "Uncharted 4 Banner" },
 ];
 
-let state = [3, 0, 1];
-let flag = true;
-
-previousBtn.addEventListener("click", (e) => {
+const previousBtnFunc = (e) => {
+  clearInterval(myInterval);
   if (flag === false) return;
   flag = false;
   state = decrement(state);
   slideRight();
   assignSources();
-});
+  myInterval = setInterval(nextBtnFunc, 3500);
+};
 
-nextBtn.addEventListener("click", (e) => {
+const nextBtnFunc = (e) => {
+  clearInterval(myInterval);
   if (flag === false) return;
   flag = false;
   state = increment(state);
   slideLeft();
   assignSources();
-});
+  myInterval = setInterval(nextBtnFunc, 3500);
+};
+
+let myInterval = setInterval(nextBtnFunc, 3500);
+
+let state = [3, 0, 1];
+let flag = true;
+
+previousBtn.addEventListener("click", previousBtnFunc);
+
+nextBtn.addEventListener("click", nextBtnFunc);
 
 const slideLeft = function () {
   document.querySelector(".current-banner").classList.add("slide-left");
