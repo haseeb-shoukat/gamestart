@@ -4,6 +4,7 @@ const { DateTime } = require("luxon");
 
 const GameSchema = new Schema({
   name: { type: String, required: true, maxLength: 100 },
+  genre: { type: Schema.Types.ObjectId, ref: "Genre", required: true },
   console: { type: Schema.Types.ObjectId, ref: "Console", required: true },
   description: { type: String, maxLength: 2000, required: true },
   company: { type: String, required: true, maxLength: 100 },
