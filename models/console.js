@@ -9,6 +9,7 @@ const ConsoleSchema = new Schema({
   in_stock: { type: Number, required: true, min: 0, max: 100000000 },
   price: { type: Number, required: true, min: 1, max: 100000000 },
   release_date: { type: Date },
+  img: { type: String, maxLength: 400 },
 });
 
 // Virtual for console's URL
