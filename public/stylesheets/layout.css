@@ -72,6 +72,10 @@ a {
     flex: 1;
 }
 
+footer {
+    min-height: 250px;
+}
+
 .mission {
     padding: 10px;
 }
