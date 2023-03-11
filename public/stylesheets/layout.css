@@ -116,5 +116,5 @@ footer {
 #content {
     display: flex;
     flex-direction: column;
-    
+    background-color: #344552;
 }
