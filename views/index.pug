@@ -53,8 +53,12 @@ block content
     div.item-cards
       each item in result
         div().item-card
-          div.item-img #{item.img}
-          div.item-info #{item.name}
+          div.item-img 
+            img(src=`./images/${item.collection.collectionName}/${item.img}.jpeg`, alt="Item Image")
+          div.item-info 
+            div.info-company #{item.company}
+            div.info-name #{item.name}
+            div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
   div.console-section 
     div.console-img 
     div.console-info 
