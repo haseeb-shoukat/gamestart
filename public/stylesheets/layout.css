@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600&display=swap');
 
 * {
     font-family: 'Lexend Deca', sans-serif;
+    font-weight: 500;
 }
 
 *, *:before, *:after {
@@ -122,7 +123,7 @@ footer {
 #content {
     display: flex;
     flex-direction: column;
-    background-color: #344552;
+    background-color: #FFFFFF;
     padding: 40px;
     gap: 40px;
 }
