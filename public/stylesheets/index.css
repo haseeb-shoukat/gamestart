@@ -161,7 +161,7 @@
 }
 
 .recent-section {
-    background-color: #011627;
+    background-color: #FFFFFF;
     min-height: 400px;
     padding: 20px 40px;
     display: flex;
@@ -171,15 +171,16 @@
 }
 
 .r-section-heading {
-    color: #FF9F1C;
-    font-size: 1.8rem;
+    color: #011627;
+    font-size: 2rem;
     padding-top: 20px;
+    font-weight: 600;
 }
 
 .underline {
-    width: 250px;
+    width: 260px;
     height: 5px;
-    background-color: #FF9F1C;
+    background-color: #011627;
 }
 
 .radio-box {
@@ -189,12 +190,13 @@
 
 .radio-box button {
     font-size: 1rem;
+    font-weight: 400;
     color: #FFFFFF;
     background-color: #344552;
     border: 1px solid #5a6873;
     border-right: none;
-    height: 40px;
-    min-width: 105px;
+    height: 50px;
+    min-width: 120px;
     padding: 0 25px 0 25px;
     cursor: pointer;
 }
@@ -212,4 +214,59 @@
     background-color: #BB6C00;
     border-color: #BB6C00;
     color: white;
+}
+
+.item-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 20px;
+}
+
+.item-card {
+    padding: 10px;
+    width: 250px;
+    
+}
+
+.item-card:first-child {
+    border-style: none;
+}
+
+.item-img {
+    width: 100%;
+}
+
+.item-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #FFFFFF;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.info-name, .info-company, .info-price {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-weight: 400;
+}
+
+.info-price {
+    color: #BB6C00;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.info-company {
+    color: #505e69;
 }
