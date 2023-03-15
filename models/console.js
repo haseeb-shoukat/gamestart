@@ -10,6 +10,7 @@ const ConsoleSchema = new Schema({
   price: { type: Number, required: true, min: 1, max: 100000000 },
   release_date: { type: Date },
   img: { type: String, maxLength: 400 },
+  last_updated: { type: Date, default: Date.now() },
 });
 
 // Virtual for console's URL

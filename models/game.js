@@ -12,6 +12,7 @@ const GameSchema = new Schema({
   in_stock: { type: Number, required: true, min: 0, max: 100000000 },
   release_date: { type: Date },
   img: { type: String, maxLength: 400 },
+  last_updated: { type: Date, default: Date.now() },
 });
 
 // Virtual for game's URL
