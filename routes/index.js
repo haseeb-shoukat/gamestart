@@ -1,35 +1,36 @@
 var express = require("express");
 var router = express.Router();
+const async = require("async");
 const Accessory = require("../models/accessory");
 const Console = require("../models/console");
 const Game = require("../models/game");
 
-/* GET home page. */
+/* GET home page. Main page of website */
 router.get("/", function (req, res, next) {
   async.parallel(
     {
       accessories(callback) {
-        Accessory.find().populate("console").limit(3).exec(callback);
+        Accessory.find({}).populate("console").limit(3).exec(callback);
       },
       consoles(callback) {
-        Console.find().limit(3).exec(callback);
+        Console.find({}).limit(2).exec(callback);
       },
       games(callback) {
-        Game.find()
+        Game.find({})
           .populate("genre")
           .populate("console")
           .limit(3)
           .exec(callback);
       },
     },
-    (err, result) => {
+    (err, { games, accessories, consoles }) => {
       if (err) {
         return next(err);
       }
       res.render("index", {
-        recent_accessories: result.accessories,
-        recent_games: result.games,
-        recent_consoles: result.consoles,
+        result: [...accessories, ...games, ...consoles].sort((a, b) => {
+          a.last_updated > b.last_updated ? -1 : 1;
+        }), // Sort array to get most recent items
       });
     }
   );
