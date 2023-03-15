@@ -11,43 +11,50 @@ block content
         div.game-heading Hogwarts Legacy
         div.game-text Experience Hogwarts in the 1800s. Your character is a student who holds the key to an ancient secret that threatens to tear the wizarding world apart. Make allies, battle Dark wizards, and ultimately decide the fate of the wizarding world. Your legacy is what you make of it. Live the Unwritten.
         button.game-btn Get Now!
-        btn(data-game-btn="prev").prev-btn Prev.
+        button(data-game-btn="prev").prev-btn Prev.
       div.game-img
-        btn(data-game-btn="next").next-btn Next
+        button(data-game-btn="next").next-btn Next
         img(src="./images/banners/hogwarts-legacy-banner.jpeg", alt="Hogwarts Legacy Banner")
     div.game-card
       div.game-info
         div.game-heading Modern Warfare II
         div.game-text Call of Duty®: Modern Warfare® II drops players into an unprecedented global conflict that features the return of the iconic Operators of Task Force 141. From small-scale, high-stakes infiltration tactical ops to highly classified missions, players will deploy alongside friends in a truly immersive experience.
         button.game-btn Get Now!
-        btn(data-game-btn="prev").prev-btn Prev.
+        button(data-game-btn="prev").prev-btn Prev.
       div.game-img
-        btn(data-game-btn="next").next-btn Next
+        button(data-game-btn="next").next-btn Next
         img(src="./images/banners/mw-2-banner.jpeg", alt="Modern Warefare II Banner")
     div.game-card
       div.game-info
         div.game-heading Spider-Man: Miles Morales
         div.game-text Following the events of Marvel’s Spider-Man Remastered, teenager Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. 
         button.game-btn Get Now!
-        btn(data-game-btn="prev").prev-btn Prev.
+        button(data-game-btn="prev").prev-btn Prev.
       div.game-img
-        btn(data-game-btn="next").next-btn Next
+        button(data-game-btn="next").next-btn Next
         img(src="./images/banners/spider-man-banner.jpeg", alt="Spider-Man Banner")
     div.game-card
       div.game-info
         div.game-heading UNCHARTED 4: A Thief's End
         div.game-text Set three years after the events of UNCHARTED 3: Drake’s Deception, Nathan Drake has presumably left the world of fortune-hunting behind. However, it doesn’t take long for fate to come calling when Drake’s brother, Sam, resurfaces seeking his help.
         button.game-btn Get Now!
-        btn(data-game-btn="prev").prev-btn Prev.
+        button(data-game-btn="prev").prev-btn Prev.
       div.game-img
-        btn(data-game-btn="next").next-btn Next
+        button(data-game-btn="next").next-btn Next
         img(src="./images/banners/uncharted-4-banner.jpeg", alt="Uncharted 4 Banner")
-  div.recents-section
-    div.r-section-heading
+  div.recent-section
+    div.r-section-heading Recently Added
     div.underline
-    div.item-card
-      div.item-img 
-      div.item-info 
+    div(data-radio-box).radio-box
+      button.selected All
+      button Games
+      button Consoles
+      button Accessories
+    div.item-cards
+      each item in result
+        div().item-card
+          div.item-img #{item.img}
+          div.item-info #{item.name}
   div.console-section 
     div.console-img 
     div.console-info 
