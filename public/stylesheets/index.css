@@ -14,7 +14,7 @@
     }
 
     to {
-        transform: perspective(200em) rotateY(90deg)
+        transform: perspective(200em) rotateY(90deg);
     }
 }
 
@@ -24,7 +24,7 @@
     }
 
     to {
-        transform: perspective(200em) rotateY(0deg)
+        transform: perspective(200em) rotateY(0deg);
     }
 }
 
@@ -34,7 +34,7 @@
     }
 
     to {
-        transform: perspective(200em) rotateY(-90deg)
+        transform: perspective(200em) rotateY(-90deg);
     }
 }
 
@@ -133,6 +133,7 @@
 
 .prev-btn, .next-btn {
     user-select: none;
+    border-style: none;
     position: absolute;
     background-color: #FFFFFF80;
     font-size: 1rem;
@@ -157,4 +158,58 @@
     border-top-right-radius: 50px;
     border-bottom-left-radius: 20px;
     padding: 15px 40px;
+}
+
+.recent-section {
+    background-color: #011627;
+    min-height: 400px;
+    padding: 20px 40px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.r-section-heading {
+    color: #FF9F1C;
+    font-size: 1.8rem;
+    padding-top: 20px;
+}
+
+.underline {
+    width: 250px;
+    height: 5px;
+    background-color: #FF9F1C;
+}
+
+.radio-box {
+    padding: 20px 0px;
+}
+
+
+.radio-box button {
+    font-size: 1rem;
+    color: #FFFFFF;
+    background-color: #344552;
+    border: 1px solid #5a6873;
+    border-right: none;
+    height: 40px;
+    min-width: 105px;
+    padding: 0 25px 0 25px;
+    cursor: pointer;
+}
+
+.radio-box > button:last-child {
+    border-right: 1px solid #5a6873;
+    border-radius: 0 4px 4px 0;
+}
+
+.radio-box > button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.radio-box button.selected {
+    background-color: #BB6C00;
+    border-color: #BB6C00;
+    color: white;
 }
