@@ -50,6 +50,12 @@ a {
 
 .logo-small {
     font-size: 2rem;
+    width: fit-content;
+}
+
+.mission > a {
+    display: block;
+    width: fit-content;
 }
 
 .yellow {
@@ -80,7 +86,7 @@ a {
 }
 
 footer {
-    min-height: 250px;
+    min-height: 280px;
 }
 
 .mission {
@@ -91,6 +97,14 @@ footer {
     display: flex;
     justify-content: space-evenly;
     padding: 20px 0px;
+}
+
+.footer-icons > a {
+    color: #FFFFFF;
+}
+
+.footer-icons > a:hover {
+    color: #FF9F1C;
 }
 
 .mission-statement {
