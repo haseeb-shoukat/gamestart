@@ -117,16 +117,16 @@
     font-size: 1.1rem;
 }
 
-.game-btn {
+.game-btn, .c-section-btn, .a-section-btn {
     font-size: 1.1rem;
-    padding: 8px 40px;
+    padding: 10px 30px;
     background-color: #BB6C00;
     color: #FFFFFF;
     border-style: none;
     border-radius: 10px;
 }
 
-.game-btn:hover {
+.game-btn:hover, .c-section-btn:hover, .a-section-btn:hover {
     cursor: pointer;
     background-color: #ab6400;
 }
@@ -334,4 +334,8 @@
     align-items: center;
     justify-content: center;
     color: #011627;
+}
+
+.accessory-section {
+    margin-bottom: 20px;
 }
