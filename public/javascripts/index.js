@@ -1,6 +1,6 @@
 const gameButtons = document.querySelectorAll("[data-game-btn]");
 const categorySwitcher = document.querySelector("[data-radio-box]");
-const recentItems = document.querySelectorAll(".item-cards > item-card");
+const recentItems = document.querySelectorAll(".item-cards > .item-card");
 
 gameButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -55,10 +55,13 @@ categorySwitcher.querySelectorAll("button").forEach((button) => {
 
     // Hide items not in selected category
     recentItems.forEach((item) => {
-      if (item.dataset.collectionName != button.textContent.toLowerCase()) {
-        item.display = flex;
+      if (
+        item.dataset.collectionName != button.textContent.toLowerCase() &&
+        button.textContent != "All"
+      ) {
+        item.style.display = "none";
       } else {
-        item.display = none;
+        item.style.display = "flex";
       }
     });
   });
