@@ -316,3 +316,22 @@
     font-weight: 400;
     text-align: center;
 }
+
+.icons-section {
+    display: flex;
+    height: 110px;
+    background-color: #cfd4d9;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icon-package {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #011627;
+}
