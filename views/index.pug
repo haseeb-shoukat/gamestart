@@ -52,7 +52,7 @@ block content
       button Accessories
     div.item-cards
       each item in result
-        div().item-card
+        div(data-collection-name=item.collection.collectionName).item-card
           div.item-img 
             img(src=`./images/${item.collection.collectionName}/${item.img}.jpeg`, alt="Item Image")
           div.item-info 
