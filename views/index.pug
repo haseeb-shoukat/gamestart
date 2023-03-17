@@ -10,7 +10,8 @@ block content
       div.game-info
         div.game-heading Hogwarts Legacy
         div.game-text Experience Hogwarts in the 1800s. Your character is a student who holds the key to an ancient secret that threatens to tear the wizarding world apart. Make allies, battle Dark wizards, and ultimately decide the fate of the wizarding world. Your legacy is what you make of it. Live the Unwritten.
-        button.game-btn Get Now!
+        a(href="/games/6411f7703018d04c6bb869dd") 
+          button.game-btn Get Now!
         button(data-game-btn="prev").prev-btn Prev.
       div.game-img
         button(data-game-btn="next").next-btn Next
@@ -19,7 +20,8 @@ block content
       div.game-info
         div.game-heading Modern Warfare II
         div.game-text Call of Duty®: Modern Warfare® II drops players into an unprecedented global conflict that features the return of the iconic Operators of Task Force 141. From small-scale, high-stakes infiltration tactical ops to highly classified missions, players will deploy alongside friends in a truly immersive experience.
-        button.game-btn Get Now!
+        a(href="/games/6411f7703018d04c6bb869eb") 
+          button.game-btn Get Now!
         button(data-game-btn="prev").prev-btn Prev.
       div.game-img
         button(data-game-btn="next").next-btn Next
@@ -28,7 +30,8 @@ block content
       div.game-info
         div.game-heading Spider-Man: Miles Morales
         div.game-text Following the events of Marvel’s Spider-Man Remastered, teenager Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. 
-        button.game-btn Get Now!
+        a(href="/games/6411f7703018d04c6bb869e2") 
+          button.game-btn Get Now!
         button(data-game-btn="prev").prev-btn Prev.
       div.game-img
         button(data-game-btn="next").next-btn Next
@@ -37,7 +40,8 @@ block content
       div.game-info
         div.game-heading UNCHARTED 4: A Thief's End
         div.game-text Set three years after the events of UNCHARTED 3: Drake’s Deception, Nathan Drake has presumably left the world of fortune-hunting behind. However, it doesn’t take long for fate to come calling when Drake’s brother, Sam, resurfaces seeking his help.
-        button.game-btn Get Now!
+        a(href="/games/6411f76d3018d04c6bb869cf") 
+          button.game-btn Get Now!
         button(data-game-btn="prev").prev-btn Prev.
       div.game-img
         button(data-game-btn="next").next-btn Next
@@ -52,13 +56,14 @@ block content
       button Accessories
     div.item-cards
       each item in result
-        div(data-collection-name=item.collection.collectionName).item-card
-          div.item-img 
-            img(src=`./images/${item.collection.collectionName}/${item.img}.jpeg`, alt="Item Image")
-          div.item-info 
-            div.info-company #{item.company}
-            div.info-name #{item.name}
-            div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
+        a(href=item.url) 
+          div(data-collection-name=item.collection.collectionName).item-card
+            div.item-img 
+              img(src=`./images/${item.collection.collectionName}/${item.img}.jpeg`, alt="Item Image")
+            div.item-info 
+              div.info-company #{item.company}
+              div.info-name #{item.name}
+              div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
       div.empty-section Nothing to show. Add some items to display them here.
   div.console-section 
     div.console-img 
@@ -66,7 +71,8 @@ block content
     div.console-info 
       div.c-section-heading Don't have a console? We got you covered!
       div.c-section-text Get the most popular consoles trending right now at incredible prices. We offer timely delivery of items and discounted rates for regular customers. Whether you are an Xbox fan or a Playstation lover, we have something to offer you. The best and latest of both brands available here. 
-      button.c-section-btn Shop Now!
+      a(href="/consoles") 
+        button.c-section-btn Shop Now!
   div.icons-section 
     div.icon-package
       div.icon-img 
@@ -103,6 +109,7 @@ block content
     div.accessory-info 
       div.a-section-heading Accessories to go with your favorite consoles!
       div.a-section-text Customize your console as you like. Have a broken controller or need a new case? We have it here. Find high-quality, robust equipment for your consoles. Create your own, unique gaming set-up with incredible accessories.
-      button.a-section-btn Shop Now!
+      a(href="/accessories")
+        button.a-section-btn Shop Now!
     div.accessory-img 
       img(src="./images/banners/accessories-banner.jpeg", alt="Accessories Banner")
