@@ -1,0 +1,14 @@
+#content {
+    align-items: center;
+    gap: 20px;
+    padding: 10px 80px;
+}
+
+.underline {
+    width: 190px;
+}
+
+.item-cards {
+    row-gap: 50px;
+    column-gap: 30px;
+}
