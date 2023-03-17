@@ -70,8 +70,7 @@
 }
 
 .game-card {
-   display: flex;
-   opacity: 0%;
+   display: none;
    position: absolute;
    inset: 0;
    height: 420px;
@@ -80,7 +79,7 @@
 [data-active] {
     z-index: 1;
     position: relative;
-    opacity: 100%;
+    display: flex;
 }
 
 .game-info {
