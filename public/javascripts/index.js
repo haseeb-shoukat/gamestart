@@ -1,6 +1,6 @@
 const gameButtons = document.querySelectorAll("[data-game-btn]");
 const categorySwitcher = document.querySelector("[data-radio-box]");
-const recentItems = document.querySelectorAll(".item-cards > .item-card");
+const recentItems = document.querySelectorAll(".item-cards .item-card");
 
 gameButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
