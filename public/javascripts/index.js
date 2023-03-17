@@ -53,6 +53,9 @@ categorySwitcher.querySelectorAll("button").forEach((button) => {
     categorySwitcher.querySelector(".selected").className = "";
     button.className = "selected";
 
+    let visibleItems = 0;
+    const emptyText = document.querySelector(".recent-section .empty-section");
+
     // Hide items not in selected category
     recentItems.forEach((item) => {
       if (
@@ -62,7 +65,15 @@ categorySwitcher.querySelectorAll("button").forEach((button) => {
         item.style.display = "none";
       } else {
         item.style.display = "flex";
+        visibleItems += 1;
       }
     });
+
+    // Display message if no items to show in category
+    if (visibleItems < 1) {
+      emptyText.style.display = "block";
+    } else {
+      emptyText.style.display = "none";
+    }
   });
 });
