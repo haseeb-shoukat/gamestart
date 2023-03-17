@@ -162,7 +162,7 @@
 
 .recent-section {
     background-color: #FFFFFF;
-    min-height: 400px;
+    min-height: 500px;
     padding: 20px 40px;
     display: flex;
     gap: 10px;
@@ -338,4 +338,9 @@
 
 .accessory-section {
     margin-bottom: 20px;
+}
+
+.empty-section {
+    display: none;
+    font-size: 1.2rem;
 }
