@@ -1,8 +1,18 @@
 const Console = require("../models/console");
 
 // Display list of all Consoles.
-exports.index = (req, res) => {
-  res.send("NOT IMPLEMENTED: Console list");
+exports.index = (req, res, next) => {
+  Console.find({})
+    .sort({ last_updated: -1 })
+    .exec((error, list_consoles) => {
+      if (error) {
+        return next(error);
+      }
+
+      res.render("console_list", {
+        list_consoles: list_consoles,
+      });
+    });
 };
 
 // Display detail page for a specific Console.
