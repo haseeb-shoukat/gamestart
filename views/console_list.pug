@@ -1,0 +1,20 @@
+extends layout
+
+block link-docs 
+  link(rel="stylesheet" href="/stylesheets/console_list.css")
+  script(src="/javascripts/console_list.js" defer) 
+
+block content 
+  div.r-section-heading Consoles 
+  div.underline
+  div.item-cards 
+    each item in list_consoles
+      a(href=item.url)
+        div.item-card 
+          div.item-img 
+            img(src=`/images/consoles/${item.img}.jpeg`, alt="Console") 
+          div.item-info 
+            div.info-company #{item.company} 
+            div.info-name #{item.name} 
+            div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
+    
