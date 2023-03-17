@@ -1,6 +1,16 @@
 const gameButtons = document.querySelectorAll("[data-game-btn]");
 const categorySwitcher = document.querySelector("[data-radio-box]");
 const recentItems = document.querySelectorAll(".item-cards .item-card");
+const navItems = document.querySelectorAll(".nav-item");
+
+// Highlight Home nav-link
+navItems.forEach((item) => {
+  if (!item.classList.contains("yellow") && item.textContent === "Home") {
+    item.classList.replace("nav-item", "yellow");
+  } else {
+    item.classList.remove("yellow");
+  }
+});
 
 gameButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
