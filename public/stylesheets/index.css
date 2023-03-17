@@ -332,11 +332,11 @@
 
 .icons-section {
     display: flex;
-    height: 110px;
+    height: 130px;
     background-color: #cfd4d9;
     border-radius: 20px;
     padding: 40px;
-    margin: 20px 0px;
+    margin: 40px 0px;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -350,7 +350,7 @@
 }
 
 .accessory-section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .empty-section {
