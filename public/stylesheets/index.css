@@ -224,6 +224,10 @@
     gap: 10px;
 }
 
+.item-cards a {
+    color: currentColor;
+}
+
 .item-card {
     padding: 10px 30px;
     width: 280px;
