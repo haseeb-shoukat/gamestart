@@ -1,8 +1,38 @@
 const Game = require("../models/game");
+const Console = require("../models/console");
+const Genre = require("../models/genre");
+const async = require("async");
 
 // Display list of all Games.
-exports.index = (req, res) => {
-  res.send("NOT IMPLEMENTED: Game list");
+exports.index = (req, res, next) => {
+  async.parallel(
+    {
+      games(callback) {
+        Game.find({})
+          .populate("genre")
+          .populate("console")
+          .sort({ last_updated: -1 })
+          .exec(callback);
+      },
+      consoles(callback) {
+        Console.find({}).sort({ name: 1 }).exec(callback);
+      },
+      genres(callback) {
+        Genre.find({}).sort({ name: 1 }).exec(callback);
+      },
+    },
+    (error, { games, consoles, genres }) => {
+      if (error) {
+        return next(error);
+      }
+
+      res.render("game_list", {
+        list_games: games,
+        list_consoles: consoles,
+        list_genres: genres,
+      });
+    }
+  );
 };
 
 // Display detail page for a specific Game.
