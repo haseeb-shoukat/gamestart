@@ -1,8 +1,32 @@
 const Accessory = require("../models/accessory");
+const Console = require("../models/console");
+const async = require("async");
 
 // Display list of all Accessories.
-exports.index = (req, res) => {
-  res.send("NOT IMPLEMENTED: Accessory list");
+exports.index = (req, res, next) => {
+  async.parallel(
+    {
+      accessories(callback) {
+        Accessory.find({})
+          .populate("console")
+          .sort({ last_updated: -1 })
+          .exec(callback);
+      },
+      consoles(callback) {
+        Console.find({}).sort({ name: 1 }).exec(callback);
+      },
+    },
+    (error, { accessories, consoles }) => {
+      if (error) {
+        return next(error);
+      }
+
+      res.render("accessory_list", {
+        list_accessories: accessories,
+        list_consoles: consoles,
+      });
+    }
+  );
 };
 
 // Display detail page for a specific Accessory.
