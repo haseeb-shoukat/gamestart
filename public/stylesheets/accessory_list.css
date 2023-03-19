@@ -1,0 +1,11 @@
+.accessories-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.filters-section {
+    padding-bottom: 30px;
+}
