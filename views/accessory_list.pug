@@ -1,0 +1,28 @@
+extends layout
+
+block link-docs 
+  link(rel="stylesheet" href="/stylesheets/game_list.css")
+  link(rel="stylesheet" href="/stylesheets/accessory_list.css")
+  script(src="/javascripts/accessory_list.js" defer) 
+
+block content 
+    div.r-section-heading Accessories
+    div.underline
+    div.accessories-section
+      div.filters-section 
+        div.filter-heading Consoles 
+          div(data-filter-name="console").check-filters-ver
+            each item in list_consoles
+              div.filter-item 
+                input(type="checkbox") 
+                |  #{item.name}
+      div.item-cards 
+        each item in list_accessories
+          a(href=item.url)
+            div(data-console=item.console.name).item-card 
+              div.item-img 
+                img(src=`/images/accessories/${item.img}.jpeg`, alt="Accessory") 
+              div.item-info 
+                div.info-company #{item.company} 
+                div.info-name #{item.name} 
+                div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
