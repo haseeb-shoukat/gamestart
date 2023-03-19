@@ -1,0 +1,34 @@
+extends layout
+
+block link-docs 
+  link(rel="stylesheet" href="/stylesheets/game_list.css")
+  script(src="/javascripts/game_list.js" defer) 
+
+block content 
+    div.r-section-heading Games 
+    div.underline
+    div.games-section
+      div.filters-section 
+        div.filter-heading Consoles 
+          div(data-filter-name="console").check-filters-ver
+            each item in list_consoles
+              div.filter-item 
+                input(type="checkbox") 
+                |  #{item.name}
+        div.filter-heading Genres
+          div(data-filter-name="genre").check-filters-ver
+            each item in list_genres 
+              div.filter-item
+                input(type="checkbox") 
+                |  #{item.name}
+      div.item-cards 
+        each item in list_games
+          a(href=item.url)
+            div(data-genre=item.genre.map(item => item.name) data-console=item.console.name).item-card 
+              div.item-img 
+                img(src=`/images/games/${item.img}.jpeg`, alt="Game") 
+              div.item-info 
+                div.info-company #{item.company} 
+                div.info-name #{item.name} 
+                div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
+    
