@@ -72,9 +72,9 @@ categorySwitcher.querySelectorAll("button").forEach((button) => {
         item.dataset.collectionName != button.textContent.toLowerCase() &&
         button.textContent != "All"
       ) {
-        item.style.display = "none";
+        item.parentElement.style.display = "none";
       } else {
-        item.style.display = "flex";
+        item.parentElement.style.display = "inline";
         visibleItems += 1;
       }
     });
