@@ -157,10 +157,9 @@ footer {
 .item-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     padding: 20px 20px 50px 20px;
     gap: 10px;
+    width: 100%;
 }
 
 .item-cards a {
