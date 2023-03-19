@@ -1,0 +1,66 @@
+#content {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.games-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.r-section-heading {
+    padding-top: 0px;
+}
+
+.filters-section {
+    flex-basis: 25%;
+    padding: 20px 40px;
+    background-color: #011627;
+    height: fit-content;
+    color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.filter-heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ff9f1c;
+    padding-top: 20px;
+}
+
+.filter-item {
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 5px;
+    font-weight: 300;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+}
+
+.filter-item input[type="checkbox"] {
+    cursor: pointer;
+    pointer-events: none;
+    accent-color: #ff9f1c;
+}
+
+.underline {
+    width: 140px;
+}
+
+.item-cards {
+    row-gap: 50px;
+    flex-basis: 75%
+}
+
+.check-filters-ver {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
