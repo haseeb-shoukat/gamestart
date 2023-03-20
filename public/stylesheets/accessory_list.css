@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.underline {
+    width: 220px;
+}
+
 .filters-section {
     padding-bottom: 30px;
 }
