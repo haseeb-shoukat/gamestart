@@ -1,6 +1,7 @@
 const navItems = document.querySelectorAll(".nav-item");
 const filterItems = document.querySelectorAll(".filter-item");
 const gameItems = document.querySelectorAll(".item-card");
+const emptySection = document.querySelector(".empty-section");
 
 const consoleFilters = document.querySelector(
   "[data-filter-name='console']"
@@ -34,6 +35,8 @@ filterItems.forEach((filterItem) => {
 });
 
 const updateItems = function () {
+  let totalItems = 0;
+
   // Get console names from selected filters
   const consoles = [...consoleFilters]
     .filter(
@@ -54,8 +57,15 @@ const updateItems = function () {
         genres.length < 1)
     ) {
       item.parentElement.style.display = "inline";
+      totalItems += 1;
     } else {
       item.parentElement.style.display = "none";
     }
   });
+
+  if (totalItems < 1) {
+    emptySection.style.display = "block";
+  } else {
+    emptySection.style.display = "none";
+  }
 };
