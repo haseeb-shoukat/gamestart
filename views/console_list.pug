@@ -17,4 +17,6 @@ block content
             div.info-company #{item.company} 
             div.info-name #{item.name} 
             div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
-    
+    if list_consoles.length < 1 
+      div.empty-section No consoles to show. 
+        a(href="/consoles/create")  Add a console
