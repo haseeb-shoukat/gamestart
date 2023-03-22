@@ -11,3 +11,7 @@
 .item-cards {
     row-gap: 50px;
 }
+
+.empty-section {
+    display: block;
+}
