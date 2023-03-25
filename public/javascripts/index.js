@@ -24,33 +24,38 @@ gameButtons.forEach((btn) => {
     if (index < 0) index = games.children.length - 1;
 
     const newActive = games.children[index];
+    newActive.dataset.active = true;
+    delete active.dataset.active;
 
-    // Remove unwanted classNames
-    active.children[0].className = "game-info";
-    newActive.children[0].className = "game-info";
-    active.children[1].className = "game-img";
-    newActive.children[1].className = "game-img";
+    // Remove useless class names
+    [...newActive.children, ...active.children].forEach((child) => {
+      child.classList.forEach((name) => {
+        if (name != "game-img" && name != "game-info") {
+          child.classList.remove(name);
+        }
+      });
+    });
 
-    // Add animation for prev and next actions
-    if (offset === -1) {
-      active.children[0].classList.add("rotateOutLeft");
-      active.children[1].classList.add("rotateOutRight");
+    // Set initial state for elements
+    [...newActive.children].forEach((child) => {
+      child.style.transform = "rotateY(90deg)";
+    });
+
+    if (offset == -1) {
+      [...active.children].forEach((child) =>
+        child.classList.add("rotateOutLeft")
+      );
+      [...newActive.children].forEach((child) =>
+        child.classList.add("rotateInRight")
+      );
     } else {
-      active.children[0].classList.add("rotateOutLeft");
-      active.children[1].classList.add("rotateOutRight");
+      [...active.children].forEach((child) =>
+        child.classList.add("rotateOutRight")
+      );
+      [...newActive.children].forEach((child) =>
+        child.classList.add("rotateInLeft")
+      );
     }
-
-    setTimeout(() => {
-      delete active.dataset.active;
-      newActive.dataset.active = true;
-      if (offset === -1) {
-        newActive.children[0].classList.add("rotateInLeft");
-        newActive.children[1].classList.add("rotateInRight");
-      } else {
-        newActive.children[0].classList.add("rotateInLeft");
-        newActive.children[1].classList.add("rotateInRight");
-      }
-    }, 1000);
   });
 });
 
