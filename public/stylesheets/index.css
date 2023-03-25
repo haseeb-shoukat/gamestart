@@ -1,24 +1,4 @@
-@keyframes rotateIntoScreenFromRight {
-    from {
-        transform: perspective(200em) rotateY(-90deg);
-    }
-
-    to {
-        transform: perspective(200em) rotateY(0deg)
-    }
-}
-
-@keyframes rotateOutOfScreenToRight {
-    from {
-        transform: perspective(200em) rotateY(0deg);
-    }
-
-    to {
-        transform: perspective(200em) rotateY(90deg);
-    }
-}
-
-@keyframes rotateIntoScreenFromLeft {
+@keyframes rotateInRight {
     from {
         transform: perspective(200em) rotateY(90deg);
     }
@@ -28,7 +8,27 @@
     }
 }
 
-@keyframes rotateOutOfScreenToLeft {
+@keyframes rotateOutRight {
+    from {
+        transform: perspective(200em) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(200em) rotateY(90deg);
+    }
+}
+
+@keyframes rotateInLeft {
+    from {
+        transform: perspective(200em) rotateY(-90deg);
+    }
+
+    to {
+        transform: perspective(200em) rotateY(0deg);
+    }
+}
+
+@keyframes rotateOutLeft {
     from {
         transform: perspective(200em) rotateY(0deg);
     }
@@ -36,33 +36,34 @@
     to {
         transform: perspective(200em) rotateY(-90deg);
     }
-}
-
-.rotateOutLeft {
-    animation-name: rotateOutOfScreenToLeft;
-}
-
-.rotateOutRight {
-    animation-name: rotateOutOfScreenToRight;
-}
-
-.rotateInLeft {
-    animation-name: rotateIntoScreenFromLeft;
 }
 
 .rotateInRight {
-    animation-name: rotateIntoScreenFromRight;
+    animation-name: rotateInRight;
+}
+
+.rotateInLeft {
+    animation-name: rotateInLeft;
+}
+
+.rotateOutRight {
+    animation-name: rotateOutRight;
+}
+
+.rotateOutLeft {
+    animation-name: rotateOutLeft;
 }
 
 .rotateOutLeft, .rotateOutRight {
     animation-duration: 1s;
     animation-timing-function: ease-in;
-
 }
 
 .rotateInLeft, .rotateInRight {
     animation-duration: 1s;
     animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 
 .games-section {
@@ -70,16 +71,23 @@
 }
 
 .game-card {
-   display: none;
-   position: absolute;
-   inset: 0;
-   height: 420px;
+    display: flex;
+    position: absolute;
+    inset: 0;
 }
 
 [data-active] {
-    z-index: 1;
     position: relative;
-    display: flex;
+    z-index: 1;
+}
+
+[data-active] .game-info, [data-active] .game-img {
+    transform: rotateY(0deg);
+}
+
+.game-info, .game-img {
+    transform: rotateY(90deg);
+    will-change: transform;
 }
 
 .game-info {
@@ -203,7 +211,6 @@
 
 .console-section, .accessory-section {
     display: flex;
-    height: 420px;
 }
 
 .console-info, .accessory-info {
