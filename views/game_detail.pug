@@ -1,0 +1,31 @@
+extends layout
+
+block link-docs 
+  link(rel="stylesheet" href="/stylesheets/game_detail.css")
+
+block content
+  div.game-img 
+    img(src=`../images/games/${gameInfo.img}.jpeg`, alt=gameInfo.name, srcset="")
+  div.game-info
+    div.section 
+      div.game-info-company #{gameInfo.company}
+      div.game-info-name #{gameInfo.name}
+      div.game-info-console #{gameInfo.console.name}
+    hr
+    div.game-info-price $#{gameInfo.price}
+    div.game-info-description 
+      div.description-text #{gameInfo.description}
+        div.fader 
+      button.read-more Read more 
+    div.game-info-genre 
+      div.info-label Genres: 
+      | #{gameInfo.genre.map(genre => genre.name).join(", ")}
+    div.game-info-release 
+      div.info-label Release Date: 
+      | #{gameInfo.formatted_release_date}
+    div.game-info-stock 
+      div.info-label In Stock: 
+      | #{gameInfo.in_stock.toLocaleString()} units
+    div.game-info-buttons 
+
+  
