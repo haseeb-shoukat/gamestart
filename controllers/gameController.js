@@ -36,8 +36,21 @@ exports.index = (req, res, next) => {
 };
 
 // Display detail page for a specific Game.
-exports.game_detail = (req, res) => {
-  res.send(`NOT IMPLEMENTED: Game detail: ${req.params.id}`);
+exports.game_detail = (req, res, next) => {
+  Game.findById(req.params.id)
+    .populate("genre")
+    .populate("console")
+    .exec((error, gameInfo) => {
+      if (error) {
+        return next(error);
+      }
+      if (!gameInfo) {
+        const err = new Error("Game not found.");
+        err.status = 404;
+        return next(err);
+      }
+      res.render("game_detail", { gameInfo: gameInfo });
+    });
 };
 
 // Display Game create form on GET.
