@@ -2,6 +2,7 @@ extends layout
 
 block link-docs 
   link(rel="stylesheet" href="/stylesheets/game_detail.css")
+  script(src="/javascripts/game_detail.js" defer)  
 
 block content
   div.game-img 
@@ -10,7 +11,8 @@ block content
     div.section 
       div.game-info-company #{gameInfo.company}
       div.game-info-name #{gameInfo.name}
-      div.game-info-console #{gameInfo.console.name}
+      div.game-info-console For 
+        a(href=gameInfo.console.url) #{gameInfo.console.name}
     hr
     div.game-info-price $#{gameInfo.price}
     div.game-info-description 
