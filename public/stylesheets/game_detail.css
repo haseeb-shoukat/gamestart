@@ -32,6 +32,11 @@
     color: #505e69;
 }
 
+.game-info-console {
+    padding-top: 5px;
+    font-size: 1.2rem;
+}
+
 .game-info-price {
     color: #ca7600;
     padding: 5px 0px;
@@ -58,6 +63,11 @@ hr {
     border: none;
     background-color: #ffffff;
     font-size: 0.9rem;
+    padding-bottom: 5px;
+}
+
+.read-more:hover {
+    cursor: pointer;
 }
 
 .description-text {
@@ -74,4 +84,8 @@ hr {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
     width: 100%;
     background-color: #ffffffbb;
+}
+
+.game-info-console a {
+    color: inherit;
 }
