@@ -63,7 +63,7 @@ block content
             div.item-info 
               div.info-company #{item.company}
               div.info-name #{item.name}
-              div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
+              div.info-price $#{item.formatted_price}
       div.empty-section Nothing to show. Add some items to display them here.
   div.console-section 
     div.console-img 
@@ -85,7 +85,7 @@ block content
             div.item-info 
               div.info-company #{item.company}
               div.info-name #{item.name}
-              div.info-price $#{Number.parseFloat(item.price).toFixed(2)}
+              div.info-price $#{Number.parseFloat(item.formatted_price).toFixed(2)}
       div.empty-section Nothing to show. Add some items to display them here.
   div.accessory-section 
     div.accessory-info 
