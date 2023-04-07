@@ -63,7 +63,7 @@ hr {
     border: none;
     background-color: #ffffff;
     font-size: 0.9rem;
-    padding-bottom: 5px;
+    padding: 5px 0px;
 }
 
 .read-more:hover {
@@ -88,4 +88,31 @@ hr {
 
 .game-info-console a {
     color: inherit;
+}
+
+.game-info-buttons {
+    display: flex;
+    gap: 50px;
+    padding: 20px 0px;
+}
+
+.update-btn, .delete-btn {
+    padding: 10px 50px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    border: 1px solid #022745; 
+    color: white;
+}
+
+.update-btn:hover, .delete-btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.update-btn {
+    background-color: #011627;
+}
+
+.delete-btn {
+    background-color: #dc2626;
 }
