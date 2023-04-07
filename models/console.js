@@ -25,5 +25,9 @@ ConsoleSchema.virtual("formatted_release_date").get(function () {
     : "";
 });
 
+ConsoleSchema.virtual("formatted_price").get(function () {
+  return Number.parseFloat(this.price).toFixed(2);
+});
+
 // Export model
 module.exports = mongoose.model("Console", ConsoleSchema);

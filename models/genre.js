@@ -13,5 +13,9 @@ GenreSchema.virtual("url").get(function () {
   return `/genres/${this._id}`;
 });
 
+ConsoleSchema.virtual("formatted_price").get(function () {
+  return Number.parseFloat(this.price).toFixed(2);
+});
+
 // Export model
 module.exports = mongoose.model("Genre", GenreSchema);
