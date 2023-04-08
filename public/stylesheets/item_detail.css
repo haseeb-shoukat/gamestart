@@ -4,40 +4,40 @@
     padding: 100px;
 }
 
-.game-img, .game-info {
+.item-img, .item-info {
     flex-grow: 1;
     flex-basis: 0;
 }
 
-.game-img img {
+.item-img img {
     width: 100%;
 }
 
-.game-img {
+.item-img {
     min-width: 400px;
 }
 
-.game-info {
+.item-info {
     display: flex;
     flex-direction: column;
     font-weight: 400;
     gap: 8px;
 }
 
-.game-info-name, .game-info-price {
+.item-info-name, .item-info-price {
     font-size: 2.4rem;
 }
 
-.game-info-company, .game-info-console {
+.item-info-company, .item-info-console {
     color: #505e69;
 }
 
-.game-info-console {
+.item-info-console {
     padding-top: 5px;
     font-size: 1.2rem;
 }
 
-.game-info-price {
+.item-info-price {
     color: #ca7600;
     padding: 5px 0px;
 }
@@ -49,7 +49,7 @@ hr {
     margin-top: 5px;
 }
 
-.game-info-name, .info-label {
+.item-info-name, .info-label {
     color: #022745;
 }
 
@@ -86,11 +86,11 @@ hr {
     background-color: #ffffffbb;
 }
 
-.game-info-console a {
+.item-info-console a {
     color: inherit;
 }
 
-.game-info-buttons {
+.item-info-buttons {
     display: flex;
     gap: 50px;
     padding: 20px 0px;
