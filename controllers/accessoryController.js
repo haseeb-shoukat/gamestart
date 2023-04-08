@@ -30,8 +30,20 @@ exports.index = (req, res, next) => {
 };
 
 // Display detail page for a specific Accessory.
-exports.accessory_detail = (req, res) => {
-  res.send(`NOT IMPLEMENTED: Accessory detail: ${req.params.id}`);
+exports.accessory_detail = (req, res, next) => {
+  Accessory.findById(req.params.id)
+    .populate("console")
+    .exec((error, accessoryInfo) => {
+      if (error) {
+        return next(error);
+      }
+      if (!accessoryInfo) {
+        const err = new Error("Accessory not found.");
+        err.status = 404;
+        return next(err);
+      }
+      res.render("item_detail", { itemInfo: accessoryInfo });
+    });
 };
 
 // Display Accessory create form on GET.
