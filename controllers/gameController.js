@@ -49,7 +49,7 @@ exports.game_detail = (req, res, next) => {
         err.status = 404;
         return next(err);
       }
-      res.render("game_detail", { gameInfo: gameInfo });
+      res.render("item_detail", { itemInfo: gameInfo });
     });
 };
 
