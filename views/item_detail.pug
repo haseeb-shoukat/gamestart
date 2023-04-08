@@ -1,0 +1,38 @@
+extends layout
+
+block link-docs 
+  link(rel="stylesheet" href="/stylesheets/item_detail.css")
+  script(src="/javascripts/item_detail.js" defer)  
+
+block content
+  div.item-img 
+    img(src=`../images/${itemInfo.collection.collectionName}/${itemInfo.img}.jpeg`, alt=itemInfo.name, srcset="")
+  div.item-info
+    div.section 
+      div.item-info-company #{itemInfo.company}
+      div.item-info-name #{itemInfo.name}
+      if (itemInfo.collection.collectionName != "consoles")
+        div.item-info-console For 
+          a(href=itemInfo.console.url) #{itemInfo.console.name}
+    hr
+    div.item-info-price $#{itemInfo.formatted_price}
+    div.item-info-description 
+      div.description-text #{itemInfo.description}
+        div.fader 
+      button.read-more Read more 
+    if (itemInfo.collection.collectionName === "games")
+      div.item-info-genre 
+        div.info-label Genres: 
+        | #{itemInfo.genre.map(genre => genre.name).join(", ")}
+    if itemInfo.release_date
+      div.item-info-release 
+        div.info-label Release Date: 
+        | #{itemInfo.formatted_release_date}
+    div.item-info-stock 
+      div.info-label In Stock: 
+      | #{itemInfo.in_stock.toLocaleString()} units
+    div.item-info-buttons 
+      button.update-btn Update 
+      button.delete-btn Delete
+    
+    
