@@ -58,6 +58,7 @@ hr {
 }
 
 .read-more {
+    display: none;
     text-decoration: underline;
     color: #e71d36;
     border: none;
@@ -72,12 +73,12 @@ hr {
 
 .description-text {
     position: relative;
-    max-height: 100px;
     word-wrap: break-word;
     overflow: hidden;
 }
 
 .fader {
+    display: none;
     position: absolute;
     bottom: 0;
     height: 36px;

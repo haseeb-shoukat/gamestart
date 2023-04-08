@@ -2,6 +2,12 @@ const readMore = document.querySelector(".read-more");
 const fader = document.querySelector(".fader");
 const textDescription = document.querySelector(".description-text");
 
+if (textDescription.clientHeight > 120) {
+  fader.style.display = "block";
+  readMore.style.display = "block";
+  textDescription.style.maxHeight = "100px";
+}
+
 let flag = false;
 
 readMore.addEventListener("click", () => {
