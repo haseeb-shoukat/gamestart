@@ -1,4 +1,7 @@
 const Console = require("../models/console");
+const Game = require("../models/game");
+const Accessory = require("../models/accessory");
+const async = require("async");
 
 // Display list of all Consoles.
 exports.index = (req, res, next) => {
@@ -16,8 +19,35 @@ exports.index = (req, res, next) => {
 };
 
 // Display detail page for a specific Console.
-exports.console_detail = (req, res) => {
-  res.send(`NOT IMPLEMENTED: Console detail: ${req.params.id}`);
+exports.console_detail = (req, res, next) => {
+  async.parallel(
+    {
+      consoleInfo(callback) {
+        Console.findById(req.params.id).exec(callback);
+      },
+      gameInfo(callback) {
+        Game.find({ console: req.params.id }).limit(5).exec(callback);
+      },
+      accessoryInfo(callback) {
+        Accessory.find({ console: req.params.id }).limit(5).exec(callback);
+      },
+    },
+    (error, { consoleInfo, gameInfo, accessoryInfo }) => {
+      if (error) {
+        return next(error);
+      }
+      if (!consoleInfo) {
+        const err = new Error("Console not found.");
+        err.status = 404;
+        return next(err);
+      }
+      res.render("item_detail", {
+        itemInfo: consoleInfo,
+        gameInfo: gameInfo,
+        accessoryInfo: accessoryInfo,
+      });
+    }
+  );
 };
 
 // Display Console create form on GET.
